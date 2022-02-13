@@ -1,6 +1,9 @@
 {
-  "api_bscscan": "",
-  "providerURL": {
+  "api": {
+    "key": "",
+    "URL": "https://api.bscscan.com/api"
+  },
+  "RPC": {
     "bscmain": "",
     "bsctest": "https://data-seed-prebsc-2-s3.binance.org:8545/"
   },
@@ -8,8 +11,12 @@
     "key": "",
     "address": ""
   },
-  "bankAddress": {
-    "bsctest": "0x9b4e82A5D2D6Bb5F446dd10a9381814970Cd3358",
-    "bscmain": ""
+  "contracts": {
+    "bsctest": {
+      "bank": "0x9b4e82A5D2D6Bb5F446dd10a9381814970Cd3358"
+    },
+    "bscmain": {
+      "bank": ""
+    }
   }
 }
