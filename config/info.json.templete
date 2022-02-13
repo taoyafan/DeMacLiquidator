@@ -1,0 +1,15 @@
+{
+  "api_bscscan": "",
+  "providerURL": {
+    "bscmain": "",
+    "bsctest": "https://data-seed-prebsc-2-s3.binance.org:8545/"
+  },
+  "liquidator": {
+    "key": "",
+    "address": ""
+  },
+  "bankAddress": {
+    "bsctest": "0x9b4e82A5D2D6Bb5F446dd10a9381814970Cd3358",
+    "bscmain": ""
+  }
+}

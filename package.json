@@ -1,0 +1,26 @@
+{
+  "name": "demacliquidator",
+  "version": "1.0.0",
+  "description": "This is a liquidator of DeMac dapp.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node scripts/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taoyafan/DeMacLiquidator.git"
+  },
+  "author": "Yafan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taoyafan/DeMacLiquidator/issues"
+  },
+  "homepage": "https://github.com/taoyafan/DeMacLiquidator#readme",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.3",
+    "node-fetch": "^2.6.1",
+    "node-schedule": "^2.1.0",
+    "web3": "^1.7.0"
+  }
+}
