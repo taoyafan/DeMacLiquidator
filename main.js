@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 const { URL, URLSearchParams } = require('url');
 const useWeb3 = require('./scripts/useWeb3');
 const schedule = require('node-schedule');
+const MaxUint256 = "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff";
 
 // Default type of network is string
 const argv = require('minimist') (process.argv.slice(2), {string: ['network']});
@@ -64,7 +65,7 @@ async function liquidateFactor(posId) {
 
 async function getPosInfo(bank) {
 
-    let temp = await bank.methods.allPosIdAndHealth().call();
+    let temp = await bank.methods.posIdAndHealth(0, MaxUint256).call();
     let allPosInfo = [];
     let posNum = temp[0].length;
     console.log(`Pos num is ${posNum}`);

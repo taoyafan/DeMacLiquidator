@@ -13,7 +13,7 @@
   },
   "contracts": {
     "bsctest": {
-      "bank": "0x9b4e82A5D2D6Bb5F446dd10a9381814970Cd3358"
+      "bank": "0xaD468Fa401e4D6ba39d6EFddab3C440bf371B8b9"
     },
     "bscmain": {
       "bank": ""
