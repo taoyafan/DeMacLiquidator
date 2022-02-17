@@ -2,7 +2,7 @@ const info = require('./config/info.json');
 const Bank = require("./abi/Bank.json");
 const fetch = require('node-fetch');
 const { URL, URLSearchParams } = require('url');
-const useWeb3 = require('./scripts/useWeb3');
+const useWeb3 = require('./utils/useWeb3');
 const schedule = require('node-schedule');
 const MaxUint256 = "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff";
 
