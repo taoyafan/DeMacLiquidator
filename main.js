@@ -102,7 +102,10 @@ async function callFunction(method, fromAccount, name = '') {
     if (result) {
         try {
             let gasPrice = await getGasPrice();
-            gas = await method.send({from: fromAccount, gasPrice: gasPrice, gas: gas});
+            if (gasPrice > 0) {
+                console.log(`Start liquidate with gas price: ${gasPrice}`)
+                gas = await method.send({from: fromAccount, gasPrice: gasPrice, gas: gas});
+            }
         } catch(e) {
             console.log(`Method.send failed${name}:`);
             console.log(e);
@@ -137,9 +140,8 @@ async function main() {
 
         if (isLiquidated) {
             console.log(`\nAfter liquidate:`);
-            allPosInfo.forEach((p) => console.log(`pos ${p.id} health: ${p.health}`));
-    
-            console.log(`\nRead from bank again:`);
+            // allPosInfo.forEach((p) => console.log(`pos ${p.id} health: ${p.health}`));
+            // console.log(`\nRead from bank again:`);
             await getPosInfo(bank);
         }
 
@@ -153,13 +155,16 @@ async function main() {
     console.log('End.');
 }
 
-let j = schedule.scheduleJob('*/1 * * * *', function(fireDate) {
+let rule = new schedule.RecurrenceRule();
+rule.second = [0, 20, 40];      // Run per 20 seconds
+
+let job = schedule.scheduleJob(rule, function(fireDate) {
     console.log('This job was supposed to run at ' + fireDate + ', but actually ran at ' + new Date());
     (async () => {  
-      try {
-        await main();
-      } catch (e) {
-        console.log(e);
-      }
+        try {
+            await main();
+        } catch (e) {
+            console.log(e);
+        }
     }) ();
 });

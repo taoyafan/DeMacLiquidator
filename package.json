@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node main.js",
+    "start:bsc": "node main.js --network bscmain",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
